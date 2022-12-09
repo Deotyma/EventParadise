@@ -6,3 +6,9 @@
 .redHelpText{
     color: #CD3545;
 }
+
+.custom-tooltip .tooltip-inner {
+    background-color: #CD3545;
+    text-align: left;
+    max-width: 500px;
+  }

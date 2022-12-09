@@ -26,7 +26,7 @@
 
         <div class="col-md-4 position-relative">
           <label for="nom" class="form-label">Nom</label>
-          <input type="text" class="form-control" minlength="1" maxlength="255" id="nom" data-placement="top" required>
+          <input type="text" class="form-control" minlength="1" maxlength="255" id="nom" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
           <div id="nomHelpBlock" class="form-text">
             Nom de l'événement.
           </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-4 position-relative">
           <label for="date" class="form-label">Date</label>
-          <input type="date" min=value class="form-control" id="date" required>
+          <input type="date" min=value class="form-control" id="date" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
           <div id="dateHelpBlock" class="form-text">
             Date le l'événement.
           </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-md-4 position-relative">
           <label for="lieu" class="form-label">Lieu</label>
-          <select class="form-select" id="lieu" required>
+          <select class="form-select" id="lieu"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
             <option selected disabled value="">Choisir un lieu dans la liste</option>
             <option>Paris</option>
             <option>Rennes</option>
@@ -63,7 +63,7 @@
         </div>
         <div class="col-md-8 position-relative">
           <label for="theme" class="form-label">Thème</label>
-          <select class="form-select" id="theme" required>
+          <select class="form-select" id="theme"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
             <option selected disabled value="">Choisir un thème dans la liste</option>
             <option>Écologie</option>
             <option>Resources Humaines</option>
@@ -80,7 +80,7 @@
           <label for="tarif" class="form-label">Tarif</label>
           <div class="input-group has-validation">
             <span class="input-group-text" id="tarif">€</span>
-            <input type="number" min="1" class="form-control" id="tarif" required>
+            <input type="number" min="1" class="form-control" id="tarif"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip"required>
             <div id="tarifHelpBlock" class="form-text col-12">
               Tarif jurnalieer de l'événement
             </div>
@@ -91,7 +91,7 @@
         </div>
         <div class="mb-3">
           <label for="description" class="form-label">Textarea</label>
-          <textarea class="form-control" id="description" placeholder="Required example textarea" minlength="1" maxlength="1000" required></textarea>
+          <textarea class="form-control" id="description" placeholder="Required example textarea" minlength="1" maxlength="1000"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required></textarea>
           <div id="descriptionHelpBlock" class="form-text">
             Description de l'événement
           </div>
@@ -104,9 +104,6 @@
         </div>
       </form>
       <div id="toast"></div>
-
-      <p class="tool" data-bs-toggle="tooltip" data-bs-title="Some tooltip text!">Hover over me</p>
-
     
 </body>
 </html>

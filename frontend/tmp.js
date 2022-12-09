@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 //const helpText = document.getElementsByClassName("form-text")
+const myToastEl = document.getElementById('toast')
 
 const elements = form.elements;
 
@@ -45,6 +46,9 @@ form.addEventListener("submit", (event) => {
         element.classList.remove("is-valid")
     }
     console.log("implement toaster");
+    myToastEl.addEventListener('show.bs.toast', () => {
+        myToastEl.isShown()
+    })
 
     toast.innerHTML = `
     <div class="toast-body">
@@ -63,12 +67,9 @@ form.addEventListener("submit", (event) => {
     `
 });
 
-/* const myToastEl = document.getElementById('toast')
-myToastEl.addEventListener('show.bs.toast', () => {
-  
-})
 
-const myTooltipEl = document.getElementsByClassName('tool')
+
+/* const myTooltipEl = document.getElementsByClassName('tool')
 const tooltip = bootstrap.Tooltip.getOrCreateInstance(myTooltipEl)
 
 myTooltipEl.addEventListener('show.bs.tooltip', () => {
@@ -76,3 +77,23 @@ myTooltipEl.addEventListener('show.bs.tooltip', () => {
 })
 
 tooltip.show() */
+
+/* const tooltipList = document.querySelectorAll(`[data-bs-toggle = "tooltip"]`)
+const tooltip = bootstrap.Tooltip.getOrCreateInstance(tooltipList)
+
+tooltipList.addEventListener("show.bs.tooltip", ()=>{
+    if(tooltipList.classList.contains('is-invalid')){
+        tooltip.show()
+    }
+}) */
+
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+const input = document.querySelector("input");
+const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    //if((input.classList.contains('is-invalid'))){
+        return new bootstrap.Tooltip(tooltipTriggerEl, {
+            'customClass': 'custom-tooltip',
+          })
+    //}
+  
+})
