@@ -1,7 +1,8 @@
 const form = document.querySelector("form");
-//const helpText = document.getElementsByClassName("form-text")
-const myToastEl = document.getElementById('toast');
+//const helpText = document.getElementsByClassName("form-text");
 const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+const myToast = document.getElementById('toast');
+const toast = new bootstrap.Toast(myToast);
 
 const elements = form.elements;
 console.log(elements);
@@ -45,29 +46,10 @@ const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    /* console.log("implement form reset"); */
     form.reset();
     for (const element of elements){
         element.classList.remove("is-valid")
     }
     console.log("implement toaster");
-    myToastEl.addEventListener('show.bs.toast', () => {
-        myToastEl.isShown()
-    })
-
-    toast.innerHTML = `
-    <div class="toast-body">
-      L'événement est envoyé.
-    </div>
-    <div id="myToast" class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        Hello, world! This is a toast message.
-      </div>
-    </div>
-  </div>
-    `
-});
+    toast.show();
+})
