@@ -1,14 +1,8 @@
-.tool{
-    font-size: large;
-    color: blueviolet;
-}
-
-.redHelpText{
-    color: #CD3545;
-}
 
 .custom-tooltip .tooltip-inner {
     background-color: #CD3545;
-    text-align: left;
-    max-width: 500px;
   }
+
+.tooltip .tooltip-arrow {
+    --bs-tooltip-bg:#CD3545;
+}

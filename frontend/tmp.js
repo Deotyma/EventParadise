@@ -1,8 +1,10 @@
 const form = document.querySelector("form");
 //const helpText = document.getElementsByClassName("form-text")
-const myToastEl = document.getElementById('toast')
+const myToastEl = document.getElementById('toast');
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 
 const elements = form.elements;
+console.log(elements);
 
 for (const element of elements) { // for(String str: strings)
     const type = element.type;
@@ -12,31 +14,34 @@ for (const element of elements) { // for(String str: strings)
         const mm = String(today.getMonth() + 1).padStart(2, "0");
         const yyyy = today.getFullYear();
         element.min = `${yyyy}-${mm}-${dd}`;
-        //console.log(element.min);
     }
-    if (type != "submit") {
-        /* console.log(type) */
+
+   if (type != "submit") {
         element.addEventListener("input", (event)=>{
-            element.classList.add("is-invalid");
+            //const validityState = input.validity;
             if(element.validity.valid){
                 element.classList.remove("is-invalid")
                 element.classList.add("is-valid");
-                //helpText.classList.remove("redTextHelp")
+
             }
             else if( element.classList.contains('is-invalid') && element.validity.valid){
                 element.classList.remove("is-invalid")
                 element.classList.add("is-valid");
-                //helpText.classList.remove("redTextHelp")
+               
             }
             else{
                 element.classList.remove("is-valid");
                 element.classList.add("is-invalid");
-                //helpText.classList.add("redTextHelp");
             }
         })
     }
-
 }
+
+const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl, {
+        'customClass': 'custom-tooltip',
+      })
+})
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -66,34 +71,3 @@ form.addEventListener("submit", (event) => {
   </div>
     `
 });
-
-
-
-/* const myTooltipEl = document.getElementsByClassName('tool')
-const tooltip = bootstrap.Tooltip.getOrCreateInstance(myTooltipEl)
-
-myTooltipEl.addEventListener('show.bs.tooltip', () => {
-  myTooltipEl.tooltip().mouseover();
-})
-
-tooltip.show() */
-
-/* const tooltipList = document.querySelectorAll(`[data-bs-toggle = "tooltip"]`)
-const tooltip = bootstrap.Tooltip.getOrCreateInstance(tooltipList)
-
-tooltipList.addEventListener("show.bs.tooltip", ()=>{
-    if(tooltipList.classList.contains('is-invalid')){
-        tooltip.show()
-    }
-}) */
-
-const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-const input = document.querySelector("input");
-const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-    //if((input.classList.contains('is-invalid'))){
-        return new bootstrap.Tooltip(tooltipTriggerEl, {
-            'customClass': 'custom-tooltip',
-          })
-    //}
-  
-})

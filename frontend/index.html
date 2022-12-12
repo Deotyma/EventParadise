@@ -26,29 +26,23 @@
 
         <div class="col-md-4 position-relative">
           <label for="nom" class="form-label">Nom</label>
-          <input type="text" class="form-control" minlength="1" maxlength="255" id="nom" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
+          <input type="text" class="form-control" minlength="1" maxlength="255" id="nom" data-bs-toggle="tooltip" data-bs-title="Ce champ est obligatoire." required>
           <div id="nomHelpBlock" class="form-text">
             Nom de l'événement.
-          </div>
-          <div class="invalid-tooltip">
-            Ce champ est obligatoire.
           </div>
         </div>
           
         </div>
         <div class="col-md-4 position-relative">
           <label for="date" class="form-label">Date</label>
-          <input type="date" min=value class="form-control" id="date" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
+          <input type="date" min=value class="form-control" id="date" data-bs-toggle="tooltip" data-bs-title=" Doit être égale ou supérieure à aujourd’hui " required>
           <div id="dateHelpBlock" class="form-text">
             Date le l'événement.
-          </div>
-          <div class="invalid-tooltip">
-            Doit être égale ou supérieure à aujourd’hui .
           </div>
         </div>
         <div class="col-md-4 position-relative">
           <label for="lieu" class="form-label">Lieu</label>
-          <select class="form-select" id="lieu"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
+          <select class="form-select" id="lieu"  data-bs-toggle="tooltip" data-bs-title="Ce champ est obligatoire" required>
             <option selected disabled value="">Choisir un lieu dans la liste</option>
             <option>Paris</option>
             <option>Rennes</option>
@@ -57,13 +51,10 @@
           <div id="lieuHelpBlock" class="form-text">
             Lieu de l'événement.
           </div>
-          <div class="invalid-tooltip">
-            Ce champ est obligatoire.
-          </div>
         </div>
         <div class="col-md-8 position-relative">
           <label for="theme" class="form-label">Thème</label>
-          <select class="form-select" id="theme"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required>
+          <select class="form-select" id="theme"  data-bs-toggle="tooltip" data-bs-title="Ce champ est obligatoire." required>
             <option selected disabled value="">Choisir un thème dans la liste</option>
             <option>Écologie</option>
             <option>Resources Humaines</option>
@@ -72,31 +63,22 @@
           <div id="themeHelpBlock" class="form-text">
             Thème de l'événement.
           </div>
-          <div class="invalid-tooltip">
-            Ce champ est obligatoire.
-          </div>
         </div>
         <div class="col-md-4 position-relative">
           <label for="tarif" class="form-label">Tarif</label>
           <div class="input-group has-validation">
             <span class="input-group-text" id="tarif">€</span>
-            <input type="number" min="1" class="form-control" id="tarif"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip"required>
+            <input type="number" min="1" class="form-control" id="tarif"  data-bs-toggle="tooltip" data-bs-title="Doit être positif"required>
             <div id="tarifHelpBlock" class="form-text col-12">
               Tarif jurnalieer de l'événement
-            </div>
-            <div class=" invalid-tooltip">
-              Ce champ est obligatoire.
             </div>
           </div>
         </div>
         <div class="mb-3">
           <label for="description" class="form-label">Textarea</label>
-          <textarea class="form-control" id="description" placeholder="Required example textarea" minlength="1" maxlength="1000"  data-bs-toggle="tooltip" data-bs-title="Disabled tooltip" required></textarea>
+          <textarea class="form-control" id="description" minlength="1" maxlength="1000"  data-bs-toggle="tooltip" data-bs-title="Ce champ est obligatoire" required></textarea>
           <div id="descriptionHelpBlock" class="form-text">
             Description de l'événement
-          </div>
-          <div class="invalid-feedback">
-            Please enter a message in the textarea.
           </div>
         </div>
         <div class="col-12 d-flex justify-content-end">
